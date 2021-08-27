@@ -2,6 +2,8 @@
 #define _MENU_HPP_
 
 #include <iostream>
+#include <string>
+#include "json.hpp"
 
 class Menu{
   private:
@@ -9,6 +11,7 @@ class Menu{
   public:
     Menu(){};
     int bookMenu();
+    nlohmann::json addBookMenu(int bookCount);
 };
 
 #endif // _MENU_HPP_

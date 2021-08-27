@@ -1,0 +1,15 @@
+[
+    {
+        "bookID": 0,
+        "bookInfo": {
+            "author": "Author",
+            "avail": true,
+            "con": false,
+            "pub": 2020,
+            "title": "Book",
+            "type": "pdf"
+        },
+        "location": "SM",
+        "subject": "history"
+    }
+]

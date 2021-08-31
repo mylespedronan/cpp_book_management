@@ -11,5 +11,18 @@
         },
         "location": "SM",
         "subject": "history"
+    },
+    {
+        "bookID": 1,
+        "bookInfo": {
+            "author": "Author1",
+            "avail": true,
+            "con": true,
+            "pub": 1993,
+            "title": "Book1",
+            "type": "hardcover"
+        },
+        "location": "SF",
+        "subject": "history"
     }
 ]

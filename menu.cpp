@@ -12,6 +12,7 @@ int Menu::bookMenu(){
   std::cout << "6. Rent a book" << std::endl;
   std::cout << "7. Return a book" << std::endl;
   std::cout << "8. Login" << std::endl;
+  std::cout << "9. Exit program" << std::endl;
   std::cout << "\nYour choice: ";
   std::cin >> choice;
   std::cout << std::endl;
@@ -25,7 +26,7 @@ int Menu::bookMenu(){
   return choice;
 }
 
-json Menu::addBookMenu(int bookCount){
+json Menu::addBookMenu(){
   json newBook;
   std::string title, author;
   int pub;
@@ -138,3 +139,25 @@ json Menu::addBookMenu(int bookCount){
   return newBook;
 }
 
+int Menu::updateBookMenu(){
+  std::cout << "1. Update subject" << std::endl;
+  std::cout << "2. Update location" << std::endl;
+  std::cout << "3. Update title" << std::endl;
+  std::cout << "4. Update author" << std::endl;
+  std::cout << "5. Update publication year" << std::endl;
+  std::cout << "6. Update book condition" << std::endl;
+  std::cout << "7. Update availability" << std::endl;
+  std::cout << "8. Update book type" << std::endl;
+  std::cout << "9. Return to previous menu" << std::endl;
+  std::cout << std::endl;
+  std::cout << "What would you like to update: ";
+  std::cin >> choice;
+
+  if(std::cin.fail()){
+    std::cin.clear();
+    std::cin.ignore(10000, '\n');
+    throw "Invalid option selected. Please try again.";
+  }
+
+  return choice;
+}

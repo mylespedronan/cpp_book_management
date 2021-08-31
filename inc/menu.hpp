@@ -11,7 +11,8 @@ class Menu{
   public:
     Menu(){};
     int bookMenu();
-    nlohmann::json addBookMenu(int bookCount);
+    nlohmann::json addBookMenu();
+    int updateBookMenu();
 };
 
 #endif // _MENU_HPP_

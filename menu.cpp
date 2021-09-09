@@ -72,22 +72,22 @@ json Menu::addBookMenu(){
 
   // Title
   std::cout << "What is the title of the book: ";
-  std::cin >> title;
+  std::getline(std::cin >> std::ws, title);
   if(std::cin.fail()){
     std::cin.clear();
     std::cin.ignore(10000, '\n');  
-    throw "Invalid input. Please try again.";
+    throw "Invalid title. Please try again.";
   }
   
   newBook["bookInfo"]["title"] = title;
 
   // Author
   std::cout << "Who is the author of the book: ";
-  std::cin >> author;
+  std::getline(std::cin >> std::ws, author);
   if(std::cin.fail()){
     std::cin.clear();
     std::cin.ignore(10000, '\n');  
-    throw "Invalid input. Please try again.";
+    throw "Invalid author. Please try again.";
   }
 
   newBook["bookInfo"]["author"] = author;
@@ -111,7 +111,7 @@ json Menu::addBookMenu(){
   if(std::cin.fail()){
     std::cin.clear();
     std::cin.ignore(10000, '\n');  
-    throw "Invalid input. Please try again.";
+    throw "Invalid condition. Please try again.";
   }
   
   newBook["bookInfo"]["con"] = con;
@@ -122,7 +122,7 @@ json Menu::addBookMenu(){
   if(std::cin.fail()){
     std::cin.clear();
     std::cin.ignore(10000, '\n');  
-    throw "Invalid input. Please try again.";
+    throw "Invalid type. Please try again.";
   } else if (choice < 0 || choice > 3){
     throw "No valid choice selected. Please try again.";
   }
@@ -140,6 +140,7 @@ json Menu::addBookMenu(){
 }
 
 int Menu::updateBookMenu(){
+  std::cout << "------------\t Update a Book\t------------" << "\n" << std::endl;
   std::cout << "1. Update subject" << std::endl;
   std::cout << "2. Update location" << std::endl;
   std::cout << "3. Update title" << std::endl;
@@ -148,7 +149,8 @@ int Menu::updateBookMenu(){
   std::cout << "6. Update book condition" << std::endl;
   std::cout << "7. Update availability" << std::endl;
   std::cout << "8. Update book type" << std::endl;
-  std::cout << "9. Return to previous menu" << std::endl;
+  std::cout << "9. Update another book" << std::endl;
+  std::cout << "10. Return to previous menu" << std::endl;  
   std::cout << std::endl;
   std::cout << "What would you like to update: ";
   std::cin >> choice;
@@ -156,7 +158,9 @@ int Menu::updateBookMenu(){
   if(std::cin.fail()){
     std::cin.clear();
     std::cin.ignore(10000, '\n');
-    throw "Invalid option selected. Please try again.";
+    choice = 0;
+  } else if(choice < 0 || choice > 10){
+    choice = 0;
   }
 
   return choice;

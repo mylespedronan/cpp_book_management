@@ -2,6 +2,7 @@
 #define _MENU_HPP_
 
 #include <iostream>
+#include <sstream>
 #include <string>
 #include "json.hpp"
 

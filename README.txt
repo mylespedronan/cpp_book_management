@@ -2,8 +2,8 @@ This is a project for a Book Inventory Management System in C++. A user is able 
 
 The basic features of the book rental system are:
 
-- Add book (Takes inputs of book details [model, year, new/used, available/not available])
-- Update book Details (Updates details of book in the book records [cost, how many times rented, damages])
+- Add book (Takes inputs of book details [subject, year, new/used, available/not available])
+- Update book Details (Updates details of book in the book records [cost, condition])
 - Remove book (Clears existing record of a book)
 - List all books (Show all available books)
 - Check book (Check book data)
@@ -25,5 +25,4 @@ Requirements:
   - If a user is new, they must create an account which will be stored in users.json
     - TO DO: look into hashing username/password for user protection
       - https://github.com/weidai11/cryptopp
-  
   

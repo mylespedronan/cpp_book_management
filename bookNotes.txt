@@ -1,0 +1,18 @@
+[
+  {
+    "subject" : "history",
+    "location" : "SM", 
+    "bookID" : 0,
+    "bookInfo" : {
+      "title" : "Book",
+      "author" : "Author",
+      "pub" : 2020,
+      "con" : false,
+      "avail" : true,
+      "type" : "pdf",
+    }
+  }
+]
+
+Location : SF, SM, SJ
+Subject : History, Science, Biography

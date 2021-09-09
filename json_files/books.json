@@ -1,0 +1,67 @@
+[
+    {
+        "bookID": 0,
+        "bookInfo": {
+            "author": "HistoryMan",
+            "avail": true,
+            "con": false,
+            "pub": 1994,
+            "title": "History",
+            "type": "paperback"
+        },
+        "location": "SJ",
+        "subject": "history"
+    },
+    {
+        "bookID": 1,
+        "bookInfo": {
+            "author": "ScienceMan",
+            "avail": true,
+            "con": true,
+            "pub": 2021,
+            "title": "Science",
+            "type": "hardcover"
+        },
+        "location": "SJ",
+        "subject": "science"
+    },
+    {
+        "bookID": 2,
+        "bookInfo": {
+            "author": "Biography Man",
+            "avail": true,
+            "con": true,
+            "pub": 2020,
+            "title": "Biography Rules",
+            "type": "pdf"
+        },
+        "location": "SM",
+        "subject": "biography"
+    },
+    {
+        "bookID": 3,
+        "bookInfo": {
+            "author": "RZA",
+            "avail": true,
+            "con": false,
+            "pub": 2002,
+            "title": "Wutang",
+            "type": "paperback"
+        },
+        "location": "SF",
+        "subject": "biography"
+    },
+    {
+        "bookID": 4,
+        "bookInfo": {
+            "author": "Bill Nye",
+            "avail": true,
+            "con": false,
+            "pub": 2000,
+            "title": "Science Rules",
+            "type": "pdf"
+        },
+        "location": "SF",
+        "subject": "history"
+    }
+]

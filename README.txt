@@ -26,3 +26,7 @@ Requirements:
     - TO DO: look into hashing username/password for user protection
       - https://github.com/weidai11/cryptopp
   
+This program uses the Crypto++ library found at:
+- https://cryptopp.com/
+- https://cryptopp.com/wiki/Visual_Studio#Build_and_Install_the_Library
+- https://github.com/weidai11/cryptopp/tree/34a34967ac560c1801bf3845dbac3ac63c1d4c05 

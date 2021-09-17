@@ -12,6 +12,8 @@ BooksJSON booksJSON;
 Books books;
 Account acc;
 
+bool isLoggedIn = false;
+
 int main(){
   int choice, bookID;
 
@@ -20,35 +22,47 @@ int main(){
   switch(choice){
     case 1:
       // Add a book
-      std::cout << "------------\t Add a Book\t------------" << "\n" << std::endl;
-      books.addBook();
+      if(isLoggedIn){
+        std::cout << "------------\t Add a Book\t------------" << "\n" << std::endl;
+        books.addBook();
+      } else {
+        std::cout << "Please Log In before adding a book!\n" << std::endl;
+      }
       break;
     case 2:
       // Update a book
-      std::cout << "Which book ID would you like to update: ";
-      std::cin >> bookID;
+      if(isLoggedIn){
+        std::cout << "Which book ID would you like to update: ";
+        std::cin >> bookID;
 
-      if(std::cin.fail()){
-        std::cout << "Invalid option selected. Please try again." << "\n" << std::endl;
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
-      } 
+        if(std::cin.fail()){
+          std::cout << "Invalid option selected. Please try again." << "\n" << std::endl;
+          std::cin.clear();
+          std::cin.ignore(10000, '\n');
+        } 
 
-      books.updateBook(bookID);
+        books.updateBook(bookID);
+      } else {
+        std::cout << "Please Log In before updating a book!\n" << std::endl;
+      }
 
       break;
     case 3:
       // Remove a book
-      std::cout << "Which book ID would you like to delete: ";
-      std::cin >> bookID;
+      if(isLoggedIn){
+        std::cout << "Which book ID would you like to delete: ";
+        std::cin >> bookID;
 
-      if(std::cin.fail()){
-        std::cout << "Invalid option selected. Please try again." << "\n" << std::endl;
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
-      } 
+        if(std::cin.fail()){
+          std::cout << "Invalid option selected. Please try again." << "\n" << std::endl;
+          std::cin.clear();
+          std::cin.ignore(10000, '\n');
+        } 
 
-      books.deleteBook(bookID);
+        books.deleteBook(bookID);
+      } else {
+        std::cout << "Please Log In before deleting a book!\n" << std::endl;
+      }
       break;
     case 4:
       // List all books
@@ -73,33 +87,40 @@ int main(){
       break;
     case 6:
       // Rent a book
-      std::cout << "Which book ID would you like to rent: ";
-      std::cin >> bookID;
+      if(isLoggedIn){  
+        std::cout << "Which book ID would you like to rent: ";
+        std::cin >> bookID;
 
-      if(std::cin.fail()){
-        std::cout << "Invalid option selected. Please try again." << "\n" << std::endl;
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
-      } 
+        if(std::cin.fail()){
+          std::cout << "Invalid option selected. Please try again." << "\n" << std::endl;
+          std::cin.clear();
+          std::cin.ignore(10000, '\n');
+        } 
 
-      std::cout << std::endl;    
+        std::cout << std::endl;    
 
-      books.rentBook(bookID);
+        books.rentBook(bookID);
+      } else {
+        std::cout << "Please Log In before renting a book!\n" << std::endl;
+      }
       break;
     case 7:
       // Return a book
-      std::cout << "Which book ID would you like to return: ";
-      std::cin >> bookID;
+      if(isLoggedIn){
+        std::cout << "Which book ID would you like to return: ";
+        std::cin >> bookID;
 
-      if(std::cin.fail()){
-        std::cout << "Invalid option selected. Please try again." << "\n" << std::endl;
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
-      } 
+        if(std::cin.fail()){
+          std::cout << "Invalid option selected. Please try again." << "\n" << std::endl;
+          std::cin.clear();
+          std::cin.ignore(10000, '\n');
+        } 
 
-      std::cout << std::endl;    
-
-      books.returnBook(bookID);
+        std::cout << std::endl;    
+        books.returnBook(bookID);
+      } else {
+        std::cout << "Please Log In before returning a book!\n" << std::endl;
+      }        
       break;
     case 8:
       // Register
@@ -108,8 +129,14 @@ int main(){
       break;
     case 9:
       // Login
+      std::cout << "------------\t Login \t------------" << "\n" << std::endl;
+      acc.accLogin(&isLoggedIn);
       break;
     case 10:
+      // Log Out
+      acc.accLogout(&isLoggedIn);
+      break;
+    case 11:
       // Exit Program
       std::cout << "Exiting Program.\n" << std::endl;
       exit(EXIT_SUCCESS);

@@ -22,3 +22,24 @@ void BooksJSON::updateBookJSON(json bookInfo){
   bookJSON << std::setw(4) << bookInfo << std::endl;
   bookJSON.close();
 }
+
+json UsersJSON::readUsersJSON(){
+  json user;
+
+  std::ifstream usersJSON("json_files/users.json");
+
+  if(!usersJSON.is_open()){
+    throw "File unable to open! Program exiting.\n";
+  }
+
+  usersJSON >> user;
+  usersJSON.close();
+
+  return user;
+}
+
+void UsersJSON::updateUserJSON(json userInfo){
+  std::ofstream usersJSON("json_files/users.json");
+  usersJSON << std::setw(4) << userInfo << std::endl;
+  usersJSON.close();
+}

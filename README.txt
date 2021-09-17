@@ -9,6 +9,9 @@ The basic features of the book rental system are:
 - Check book (Check book data)
 - Rent a book 
 - Return a book
+- Register 
+- Login 
+- Logout
 
 Requirements:
 - User is brought to book menu upon starting program. User must select an option
@@ -23,6 +26,6 @@ Requirements:
       - Renting a book removes a credit to user's account
       - All accounts have a maximum of 5 credits
   - If a user is new, they must create an account which will be stored in users.json
-    - TO DO: look into hashing username/password for user protection
-      - https://github.com/weidai11/cryptopp
   
+This program uses the hash library found at:
+- https://en.cppreference.com/w/cpp/utility/hash

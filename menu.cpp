@@ -11,8 +11,10 @@ int Menu::bookMenu(){
   std::cout << "5. Check a book" << std::endl;
   std::cout << "6. Rent a book" << std::endl;
   std::cout << "7. Return a book" << std::endl;
-  std::cout << "8. Login" << std::endl;
-  std::cout << "9. Exit program" << std::endl;
+  std::cout << "8. Register" << std::endl;
+  std::cout << "9. Login" << std::endl;  
+  std::cout << "10. Logout" << std::endl;
+  std::cout << "11. Exit program" << std::endl;
   std::cout << "\nYour choice: ";
   std::cin >> choice;
   std::cout << std::endl;
